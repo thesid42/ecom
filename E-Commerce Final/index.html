@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <title>E-COMMERCE</title>
+    <link rel="stylesheet" href="./css/styles.css"/>
+
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link
+            href="https://fonts.googleapis.com/css?family=Lato&display=swap"
+            rel="stylesheet"
+    />
+    <!-- slider links -->
+    <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <script src="js/jQuery3.4.1.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    />
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    />
+</head>
+
+<body>
+<header>
+    <section>
+        <!-- MAIN CONTAINER -->
+        <div id="container">
+            <!-- SHOP NAME -->
+            <div id="shopName">
+                <a href="index.html"> <b>SHOP</b>IZER </a>
+            </div>
+            <!-- COLLCETIONS ON WEBSITE -->
+            <div id="collection">
+                <div id="clothing"><a href="clothing.html"> CLOTHING </a></div>
+                <div id="accessories">
+                    <a href="accessories.html"> ACCESSORIES </a>
+                </div>
+            </div>
+            <!-- SEARCH SECTION -->
+            <div id="search">
+                <i class="fas fa-search search"></i>
+                <input
+                        type="text"
+                        id="input"
+                        name="searchBox"
+                        placeholder="Search for Clothing and Accessories"
+                />
+            </div>
+            <!-- USER SECTION (CART AND USER ICON) -->
+            <div id="user">
+                <a href="cart.html">
+                    <i class="fas fa-shopping-cart addedToCart"></i
+                    ></a>
+                <a href="profile.html">
+                    <i class="fas fa-user-circle userIcon"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</header>
+<!-- SLIDER -->
+<section>
+    <div id="containerSlider">
+        <div id="slidingImage"><img src="img/img1.png" alt="image1"/></div>
+        <div id="slidingImage"><img src="img/img2.png" alt="image1"/></div>
+        <div id="slidingImage"><img src="img/img3.png" alt="image1"/></div>
+        <div id="slidingImage"><img src="img/img4.png" alt="image1"/></div>
+    </div>
+</section>
+<!-- CONTENT SECTION -->
+<div id="3"></div>
+<script>
+        load("content.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(3).innerHTML = req.responseText;
+        }
+
+</script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('#containerSlider').slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000
+      });
+    });
+
+</script>
+<script src="content.js"></script>
+</html>
